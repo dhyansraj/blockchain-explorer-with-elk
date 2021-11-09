@@ -1,0 +1,7 @@
+chaindata/*
+!chaindata/ethereum
+chaindata/ethereum/*
+!chaindata/bitcoin
+chaindata/bitcoin/*
+!chaindata/*/.emtpydir
+*.log

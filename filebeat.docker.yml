@@ -1,0 +1,23 @@
+filebeat.inputs:
+- type: log
+  paths:
+    - /usr/share/filebeat/inputlogs/*.log
+  json.keys_under_root: true
+
+processors:
+  - decode_json_fields:
+      fields: ["inner"]
+
+setup:
+  template:
+    enabled: true
+    fields: /usr/share/filebeat/fields.yml
+
+output:
+  # console:
+  #   pretty: true
+  elasticsearch:
+    hosts: '${ES_HOSTS:elasticsearch:9200}'
+    username: '${ES_USERNAME:}'
+    password: '${ES_PASSWORD:}'
+    pipeline: "search_event_pipeline"

@@ -1,0 +1,9 @@
+
+* Build Image
+#+begin_src bash
+docker build . -t dhyan/ethereum:1.10.11
+#+end_src
+* Start Ethereum container
+#+begin_src bash
+docker run -it -v $(pwd)/data:/home/ethereum/.ethereum -p 8545:8545 dhyan/ethereum:1.10.11 geth --ropsten --http --http.addr 0.0.0.0
+#+end_src

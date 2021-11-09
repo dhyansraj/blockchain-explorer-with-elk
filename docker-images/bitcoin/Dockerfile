@@ -1,10 +1,10 @@
-FROM centos:8
+FROM oraclelinux:7-slim
 
 ENV DOCKER_USER=bitcoin
 ENV DOCKER_DOWNLOAD_URL=https://bitcoin.org/bin/bitcoin-core-0.21.1/bitcoin-0.21.1-x86_64-linux-gnu.tar.gz
 ENV DOCKER_VERSION=0.21.1
 
-RUN yum install wget -y
+RUN yum install tar gzip wget -y
 RUN wget ${DOCKER_DOWNLOAD_URL}
 RUN tar xzf bitcoin-${DOCKER_VERSION}-x86_64-linux-gnu.tar.gz
 RUN install -m 0755 -o root -g root -t /usr/local/bin bitcoin-${DOCKER_VERSION}/bin/*

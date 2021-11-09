@@ -1,0 +1,48 @@
+- key: ethlogs
+  title: ethlogs
+  description: These are the fields used by mybeat.
+  fields:
+    - name: baseFeePerGas
+      type: keyword
+    - name: blockHash
+      type: keyword
+    - name: blockNumber
+      type: long
+    - name: chainId
+      type: keyword
+    - name: difficulty
+      type: long
+    - name: from
+      type: keyword
+    - name: gas
+      type: long
+    - name: gasLimit
+      type: long
+    - name: gasPrice
+      type: long
+    - name: gasUsed
+      type: long
+    - name: hash
+      type: keyword
+    - name: maxFeePerGas
+      type: keyword
+    - name: maxPriorityFeePerGas
+      type: long
+    - name: miner
+      type: keyword
+    - name: parentHash
+      type: keyword
+    - name: size
+      type: long
+    - name: timestamp
+      type: keyword
+    - name: to
+      type: keyword
+    - name: totalDifficulty
+      type: long
+    - name: transactionIndex
+      type: long
+    - name: type
+      type: keyword
+    - name: value
+      type: double
